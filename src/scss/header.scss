@@ -1,0 +1,123 @@
+.header {
+  background-color: $dark;
+  padding: 10px 0;
+}
+
+.header__container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav {
+  display: flex;
+  gap: 20px;
+  transition: 0.5s ease-in-out all;
+
+  @media (max-width: $tablet) {
+    border-top: 1px solid $accent;
+    position: fixed;
+    top: 55px; //header height
+    left: 100%;
+    width: 100%;
+    height: calc(100% - 55px); // -header height
+    padding: 30px 20px;
+    flex-direction: column;
+    align-items: center;
+    z-index: 10;
+    background-color: $dark;
+
+    &.is-active {
+      left: 0;
+    }
+  }
+}
+
+.nav__link {
+  padding: 10px;
+  display: block;
+  text-decoration: none;
+  color: $accent;
+  position: relative;
+  text-align: center;
+  transition: $tr;
+
+  &::after {
+    position: absolute;
+    content: '';
+    bottom: 2px;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background-color: $bright;
+    transform: translateX(-50%);
+  }
+
+  &.active::after {
+    width: calc(100% - 20px); //-padding*2
+
+    @media (max-width: $tablet) {
+      bottom: 0;
+      left: 0;
+      width: 2px;
+      height: 100%;
+      transform: translateX(0);
+    }
+  }
+
+  &:hover {
+    color: $bright;
+  }
+
+  @media (max-width: $tablet) {
+    padding: 15px 30px;
+    min-width: 80%;
+    background-color: rgba(255, 206, 251, 0.08);
+  }
+}
+
+.hamburger {
+  position: relative;
+  display: none;
+  width: 30px;
+  height: 35px;
+  cursor: pointer;
+  appearance: none;
+  background: none;
+  border: none;
+  outline: none;
+  padding: 0;
+
+  & .bar,
+  &::before,
+  &::after {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 3px;
+    border-radius: 2px;
+    background-color: $accent;
+    margin: 6px 0;
+    transition: 0.5s ease-in-out all;
+  }
+
+  &.is-active::before {
+    transform: rotate(-225deg) translate(6px, -7px);
+  }
+
+  &.is-active .bar {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  &.is-active::after {
+    transform: rotate(225deg) translate(6px, 7px);
+  }
+
+  @media (max-width: $tablet) {
+    display: block;
+  }
+}
+
+.bar {
+  position: relative;
+}

@@ -1,0 +1,43 @@
+form {
+  padding: 2rem;
+  background-color: $dark;
+  text-align: left;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.form-control {
+  margin-bottom: 15px;
+}
+
+label,
+input,
+textarea {
+  display: block;
+  width: 100%;
+}
+
+label {
+  color: $accent;
+  margin-bottom: 0.25rem;
+}
+
+input,
+textarea {
+  font: inherit;
+  padding: 5px;
+  border-radius: 4px;
+  background-color: $accent;
+  border: 2px solid $medium;
+  outline: none;
+  color: $dark;
+  box-sizing: border-box;
+  resize: vertical;
+  transition: $tr;
+}
+
+input:focus,
+textarea:focus {
+  border: 2px solid $bright;
+  background-color: lighten($bright, 25%);
+}

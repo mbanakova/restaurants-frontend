@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+@@include('html/head.html', {
+title:"Main"
+})
+
+<body>
+  @@include('html/header.html', {})
+  <main>
+    <div class="container">
+      <h1 class="h1">Make the world a tastier place!</h1>
+      <p class="text center">
+        Share your favorite restaurants or find recommendations of other users!
+      </p>
+      <ul class="actions" id="actions">
+        <li class="actions__item">
+          <a class="actions__link" href="restaurants.html">Browse Shared Restaurants</a>
+        </li>
+        <li class="actions__item">
+          <a class="actions__link" href="recommend.html">Share Your Favorite Restaurant</a>
+        </li>
+      </ul>
+    </div>
+  </main>
+  @@include('html/footer.html', {})
+  <script src="js/app.min.js"></script>
+</body>
+
+</html>

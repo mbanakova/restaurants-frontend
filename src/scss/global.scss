@@ -1,0 +1,133 @@
+@mixin font($size: 10px, $height: 10px, $weight: 400) {
+  font-size: $size;
+  line-height: $height;
+  font-weight: $weight;
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+html {
+  @include font();
+}
+
+body {
+  @include font(1.6rem, 2rem, 400);
+  font-family: $font;
+  background-color: $medium;
+  color: $white;
+  min-height: 100vh;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow-x: hidden;
+  overflow-y: scroll;
+
+  @media (max-width: $tablet) {
+    &.no-scroll {
+      overflow-y: hidden;
+    }
+  }
+
+  @media (max-width: $mobile) {
+    @include font(1.4rem, 1.8rem, 400);
+  }
+}
+
+img {
+  min-width: 100%;
+  height: auto;
+  display: block;
+}
+
+main {
+  padding: 40px 0;
+  margin-bottom: auto;
+
+  @media (max-width: $mobile) {
+    padding: 20px 0;
+  }
+}
+
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 40px;
+
+  @media (max-width: $mobile) {
+    padding: 0 20px;
+  }
+}
+
+h1 {
+  @include font(3rem, 4rem, 700);
+  font-family: $font;
+  color: $bright;
+  text-align: center;
+  margin: 0 auto 30px;
+
+  @media (max-width: $mobile) {
+    @include font(2rem, 3rem, 700);
+    margin: 0 auto 20px;
+  }
+}
+
+.logo {
+  @include font(1.4rem, 2rem, 500);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 5px 15px;
+  background-color: $bright;
+  border-radius: 4px;
+  color: $dark;
+  text-decoration: none;
+  transition: $tr;
+
+  & svg {
+    fill: currentColor;
+  }
+}
+
+.left {
+  text-align: left;
+}
+
+.right {
+  text-align: right;
+}
+
+.center {
+  text-align: center;
+}
+
+.text {
+  margin: 0 auto 10px;
+}
+
+.small {
+  @include font(1.2rem, 2rem, 500);
+}
+
+.button {
+  @include font(1.4rem, 2rem, 500);
+  text-align: center;
+  padding: 5px 15px;
+  background-color: $bright;
+  border-radius: 4px;
+  color: $dark;
+  text-decoration: none;
+  transition: $tr;
+  outline: none;
+  cursor: pointer;
+
+  &:hover,
+  &:active {
+    background-color: darken($bright, 10%);
+  }
+}

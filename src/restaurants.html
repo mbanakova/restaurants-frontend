@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+@@include('html/head.html', {
+title:"Restaurants"
+})
+
+<body>
+  @@include('html/header.html', {})
+  <main>
+    <div class="container">
+      <h1 class="h1">Recommended restaurants</h1>
+      <p class="text center">Find your next favorite restaurants with help of our other users!</p>
+      <ul class="restaurants">
+        <li class="restaurants__item">
+          <h2 class="restaurants__title">Restaurant Title</h2>
+          <div class="restaurants__meta">
+            <p class="restaurants__text">Mexican</p>
+            <p class="restaurants__text small">Address of the restaurant, including city</p>
+          </div>
+          <p class="restaurants__text">
+            A short description, explaining why this restaurant is awesome!
+          </p>
+          <a class="restaurants__link button" href="">View Website</a>
+        </li>
+        <li class="restaurants__item">
+          <h2 class="restaurants__title">Restaurant Title</h2>
+          <div class="restaurants__meta">
+            <p class="restaurants__text">Mexican</p>
+            <p class="restaurants__text small">Address of the restaurant, including city</p>
+          </div>
+          <p class="restaurants__text center">
+            A short description, explaining why this restaurant is awesome!
+          </p>
+          <a class="restaurants__link button" href="">View Website</a>
+        </li>
+        <li class="restaurants__item">
+          <h2 class="restaurants__title">Restaurant Title</h2>
+          <div class="restaurants__meta">
+            <p class="restaurants__text">Mexican</p>
+            <p class="restaurants__text small">Address of the restaurant, including city</p>
+          </div>
+          <p class="restaurants__text">
+            A short description, explaining why this restaurant is awesome!
+          </p>
+          <a class="restaurants__link button" href="">View Website</a>
+        </li>
+      </ul>
+    </div>
+  </main>
+  @@include('html/footer.html', {})
+  <script src="js/app.min.js"></script>
+</body>
+
+</html>
